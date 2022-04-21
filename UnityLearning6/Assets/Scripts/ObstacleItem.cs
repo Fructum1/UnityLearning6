@@ -9,7 +9,10 @@ public class ObstacleItem : MonoBehaviour
     {
         
     }
+    public void GetDamage(float value)
+    {
 
+    }
     // Update is called once per frame
     void Update()
     {

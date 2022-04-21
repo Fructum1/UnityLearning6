@@ -34,6 +34,10 @@ public class InteractiveBox : MonoBehaviour
             {
                 Debug.DrawLine(transform.position, hit.point, Color.red, 0.3f);
 
+                if(next.GetComponent<ObstacleItem>() != null)
+                {
+                    next.GetComponent<ObstacleItem>().GetDamage(Time.deltaTime);
+                }
             }
         }
     }
