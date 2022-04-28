@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class ObstacleItem : MonoBehaviour
 {
-    private float currentValue=0;
+    private float currentValue=1;
     private UnityEvent onDestroyObstacle;
     [SerializeField]
     private Material m_material;
@@ -22,19 +22,18 @@ public class ObstacleItem : MonoBehaviour
         {
             m_material.color = Color.white;
         }
-        if (currentValue == 0)
+
+        if (currentValue <= 0 && transform.GetComponent<Renderer>().material.color == Color.red)
         {
-            m_material.color = Color.Lerp(Color.white,Color.red,5);
             onDestroyObstacle?.Invoke();
-            Destroy(transform.gameObject);
+            Destroy(gameObject);
         }
     }
     
     // Update is called once per frame
     void Update()
-    {
-        
-        if (currentValue == 0)
+    {   
+        if (currentValue <= 0)
         {
             transform.GetComponent<Renderer>().material.color = Color.Lerp(Color.white, Color.red, Time.time / 10);
         }
