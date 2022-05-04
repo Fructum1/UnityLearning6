@@ -5,38 +5,24 @@ using UnityEngine;
 public class InteractiveBox : MonoBehaviour
 {
     [SerializeField]
-    private InteractiveBox next = null;
-    [SerializeField]
-    private bool debug;
+    public InteractiveBox next = null;
 
-
-    void AddNext(InteractiveBox box)
+    public void AddNext(InteractiveBox box)
     {
         next = box;
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     private void FixedUpdate()
     {
-        if (debug && next != null)
+        if (next != null)
         {
             if (Physics.Linecast(transform.position, next.transform.position, out RaycastHit hit))
             {
                 Debug.DrawLine(transform.position, hit.point, Color.red, 0.3f);
 
-                if(next.GetComponent<ObstacleItem>() != null)
+                if(hit.collider.TryGetComponent(out ObstacleItem item))
                 {
-                    next.GetComponent<ObstacleItem>().GetDamage(Time.deltaTime);
+                    item.GetDamage(Time.deltaTime);
                 }
             }
         }

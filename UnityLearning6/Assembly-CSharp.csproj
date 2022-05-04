@@ -58,6 +58,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\InteractiveBox.cs" />
     <Compile Include="Assets\Scripts\ObstacleItem.cs" />
+    <Compile Include="Assets\Scripts\InteractiveRaycast.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
