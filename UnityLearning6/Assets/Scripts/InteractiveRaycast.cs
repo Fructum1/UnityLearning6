@@ -6,7 +6,7 @@ public class InteractiveRaycast : MonoBehaviour
 {
     [SerializeField]
     private GameObject interactiveBoxCube;
-    private GameObject prefab;
+    private InteractiveBox prefab;
 
     // Update is called once per frame
     void Update()
@@ -26,13 +26,16 @@ public class InteractiveRaycast : MonoBehaviour
 
                 if (hitInfo.collider.TryGetComponent(out InteractiveBox interactiveBox))
                 {
-                    if (interactiveBox.next == null)
+                    if (prefab == null)
                     {
-                        prefab = interactiveBox.gameObject;
+                        if (interactiveBox.next == null)
+                        {
+                            prefab = interactiveBox;
+                        }
                     }
-                    else if(prefab != interactiveBox)
+                    else if (prefab != interactiveBox)
                     {
-                        interactiveBox.AddNext(hitInfo.collider.GetComponent<InteractiveBox>());
+                        prefab.AddNext(hitInfo.collider.GetComponent<InteractiveBox>());
                         prefab = null;
                     }
                 }

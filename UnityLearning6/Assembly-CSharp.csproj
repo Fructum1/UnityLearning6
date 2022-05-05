@@ -57,8 +57,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\InteractiveBox.cs" />
-    <Compile Include="Assets\Scripts\ObstacleItem.cs" />
     <Compile Include="Assets\Scripts\InteractiveRaycast.cs" />
+    <Compile Include="Assets\Scripts\ObstacleItem.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\ScalerModule.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\Copies.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\DeleteDaughtersTarget.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\GameObjectActivator.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\TransparentModule.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\RotationObject.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\MoveObject.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\MulticallSampleScripts.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\SampleScript.cs" />
+    <Compile Include="Assets\LearnMaterials 2\Scripts\DestroyModule.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Assets\LearnMaterials 2\Learn prefabs 2\Textures\ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
